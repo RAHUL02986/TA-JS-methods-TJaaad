@@ -121,7 +121,8 @@ function second(){
   }
   return third;
 }
-console.log(second);
+let val = second();
+console.log(val);
 
 /*
  Write a function named `callMe` which 
