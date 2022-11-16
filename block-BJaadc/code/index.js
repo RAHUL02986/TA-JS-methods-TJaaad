@@ -16,16 +16,16 @@ console.log(message.indexOf("still"));
 console.log(message.indexOf("answer"));
 
 // Log true or false based on whether the word "answers" exist in message or not
-console.log(message.indexOf("answer") === -1);
+console.log(message.indexOf("answer") !== -1);
 
 // Log true or false based on whether the word "they" exist in message or not
-console.log(message.indexOf("they") === -1);
+console.log(message.indexOf("they") !== -1);
 
 // Log true or false based on whether the word "is" exist in message or not
-console.log(message.indexOf("is") === -1);
+console.log(message.indexOf("is") !== -1);
 
 // Log true or false based on whether the word "Is" exist in message or not
-console.log(message.indexOf("is") === -1);
+console.log(message.indexOf("is") !== -1);
 
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
 console.log(message.slice(3, 6) === "you");
@@ -57,7 +57,7 @@ for(let char of message){
     console.log(char);
 }
 // Split all the words in message (split by " " space) and store it in a variable messageArray
-let messageArray = message.split("");
+let messageArray = message.split(" ");
 
 // Log all the words of messageArray
 for(let word of messageArray){
