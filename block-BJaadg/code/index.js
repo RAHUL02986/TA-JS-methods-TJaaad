@@ -38,7 +38,7 @@ console.log(
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
 */
-let final = from.concat("said",quote,"to", to);
+let final = from.concat(" said ",quote," to ", to);
 console.log(final);
 
 /*
@@ -68,19 +68,21 @@ let quoteSplitted = console.log(quote.split(" "));
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
-console.log(quote.replace("today","tomorrow"));
+let index = quoteSplitted.indexOf('today');
+quoteSplitted[index]= "tomorrow"
+quoteSplitted.join(" ");
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
-console.log(quote.indexOf("o"));
+console.log(quote.indexOf("o", 8));
 /*
 13. Find the last index of letter "a" in quote.
 */
-console.log(quote.lastIndexOf("a"));
+ let lastindexA = console.log(quote.lastIndexOf("a"));
 /*
 14. Find the second last index of letter "a" in quote.
 */
-console.log(quote.lastIndexOf('a'));
+console.log(quote.lastIndexOf("a", lastindexA - 1));
 
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
@@ -88,9 +90,13 @@ Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 
 */
+let max = 70;
+let newQuote = quote + ".".repeat(max-length);
+
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
 */
+let newStartQuote = ".".repeat(max - length) + quote;
 
 /*
 17. Log the repeat of "Hello World!" 10 times.
