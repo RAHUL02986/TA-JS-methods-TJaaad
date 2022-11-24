@@ -11,7 +11,7 @@ function peopleByHouses() {
   return got.houses.reduce((acc, house) => {
     acc[house.name] = house.people.length;
     return acc;
-  },0);
+  },{});
 }
 
 function everyone() {
@@ -45,7 +45,7 @@ function nameWithA() {
 function surnameWithS() {
   let allPeople = everyone();
   return allPeople.filter((name)=>
-  name.split(" ").toLowerCase()
+  name.split(" ")[1].toLowerCase()
   .includes("s")
   );
 
@@ -54,7 +54,7 @@ function surnameWithS() {
 function surnameWithA() {
   let allPeople = everyone();
   return allPeople.filter((name)=>
-  name.split(" ").tolowercase().includes("a")
+  name.split(" ")[1].toLowerCase().includes("a")
   );
 
 
