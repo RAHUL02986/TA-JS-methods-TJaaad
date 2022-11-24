@@ -23,7 +23,7 @@ function peopleByHouses() {
 function everyone() {
   let final = [];
   got.houses.forEach((house) => {
-    let peopleName =got.houses.people.map(
+    let peopleName =house.people.map((person)=> person.name
     );
     final = final.concat(peopleName);
   });
@@ -33,14 +33,14 @@ function everyone() {
 
 function nameWithS() {
   let allPeople = everyone();
-  return allPeople.filter(name => 
+  return allPeople.filter((name) => 
     name.toLowerCase().includes("s")
     );
 }
 
 function nameWithA() {
   let allPeople = everyone();
-  return allPeople.filter(name => 
+  return allPeople.filter((name)=> 
     name.toLowerCase().includes("a")
     );
 
@@ -48,22 +48,22 @@ function nameWithA() {
 
 function surnameWithS() {
   let allPeople = everyone();
-  return allPeople.filter(name => 
-    name.split("")[1].toLowerCase().includes("s")
+  return allPeople.filter((name) => 
+    name.split(" ")[1].toLowerCase().includes("s")
     );
 }
 
 function surnameWithA() {
   let allPeople = everyone();
-  return allPeople.filter(name => 
-    name.split("")[1].toLowerCase().includes("a")
+  return allPeople.filter((name) => 
+    name.split(" ")[1].toLowerCase().includes("a")
     );
 
 }
 
 function peopleNameOfAllHouses() {
   let final = {};
-  got.house.forEach((house) => {
+  got.houses.forEach((house) => {
     final[house.name] = house.people.map(
       (p) => p.name
     );
