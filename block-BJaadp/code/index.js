@@ -27,7 +27,7 @@ console.log(totalGrade / personNo);
 let maleGrade = persons.filter((person ) => persons.sex === "M")
 .reduce((acc, cv)=> {
   return acc + cv.grade;
-},0)/ 6
+},0)/ personNo;
 // Find the average grade of female
 let feMaleGrade = persons.filter((person ) => persons.sex === 'F')
 .reduce((acc, cv)=> {
@@ -36,7 +36,8 @@ let feMaleGrade = persons.filter((person ) => persons.sex === 'F')
 
 
 // Find the highest grade
-let highestGrade = persons.map((person)=> person.grade).sort((a,b) => a-b).pop();
+let highestGrade = persons.map((person)=> person.grade)
+.sort((a,b) => a-b).pop();
 
 // Find the highest grade in male
 let highestMale = persons
@@ -85,7 +86,9 @@ Output:
 let fruitsObj = fruitBasket.reduce((acc, cv) => {
   
   if (acc[cv]) {
-    acc[cv] + 1;
+    acc[cv] = acc[cv] + 1;
+  }else{
+    acc[cv] = 1;
   }
 return acc;
 },);
@@ -115,7 +118,9 @@ const data = [
 ];
 
 // Using reduce flat data array
-
+data.reduce((acc, cv)=>{
+  acc = acc.concate[cv];
+},[]);
 const dataTwo = [
   [1, 2, 3],
   [4, 5, 6],
@@ -139,6 +144,22 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+
+function increment(num){
+  return num +1;
+};
+function double(num){
+  return num * 2;
+};
+function decrement(num){
+  return num -1;
+};
+function triple(num){
+  return num * 3;
+};
+function half(num){
+  return math.round(num/2);
+};
 
 let pipeline = [
   increment,
@@ -164,6 +185,7 @@ EXAMPLE:
 
   ...
 */
+
 pipeline.reduce((acc, cv) => {
   acc = cv(acc);
   return acc;
